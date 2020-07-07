@@ -82,13 +82,3 @@ def upload_file(req):
     ret.data = {"oldName": file_obj.name, "newName": path.join(path_pre, now_date, file_name),
                 "fileType": file_type.split(".")[-1], "fileSize": file_obj.size}
     return JsonResponse(ret.to_dic())
-
-
-def view_file(req, file_path: str):
-    """
-    文件浏览
-    :param req:
-    :param file_path:
-    :return:
-    """
-

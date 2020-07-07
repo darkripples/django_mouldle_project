@@ -36,8 +36,6 @@ urlpatterns = [
 
     # 通用文件上传
     path(r'uploadFile/', upload_file),
-    # 文件查看
-    path(r'viewFile/<str:file_path>', view_file),
 
 ]
 
