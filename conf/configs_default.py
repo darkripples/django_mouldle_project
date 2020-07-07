@@ -1,5 +1,7 @@
 # coding:utf8
-"""各配置参数-空白"""
+"""各配置参数-基础配置"""
+
+CONFIGS_NAME = __file__
 
 # ini配置文件名
 INI_NAME = 'conf.ini'
@@ -14,18 +16,6 @@ DB_USER = 'postgres'
 DB_PWD = 'postgres'
 DB_NAME = 'darkripples'
 DB_TYPE = 'postgresql'
-# DB for Django
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': DB_NAME,  # Or path to database file if using sqlite3.
-        'USER': DB_USER,  # Not used with sqlite3.
-        'PASSWORD': DB_PWD,  # Not used with sqlite3.
-        'HOST': DB_HOST,  # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': DB_PORT,  # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 # redis
 REDIS_IP = '127.0.0.1'

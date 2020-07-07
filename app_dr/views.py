@@ -11,7 +11,6 @@
 2019/09/02 11:41   fls        1.0         create
 2019/11/22 10:27   fls        1.1         加入djangorestframework-jwt相关，并初始化测试代码
 2019/11/29 15:51   fls        2.0         去除测试代码，增加通用文件上传api
-2020/07/07 14:48   fls        2.1         增加文件查看api
 """
 
 from os import path, makedirs

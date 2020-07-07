@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from conf import UPLOAD_PATH
 
-from .views import index, upload_file, view_file
+from .views import index, upload_file
 from .views_ws import wsocket_init, api_websocket_msg
 
 # 不可删除
