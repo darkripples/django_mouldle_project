@@ -14,9 +14,10 @@
 import zipfile
 from ez_utils import walk_dir
 
-IGNORE_LIST = [".idea", ".git", ".pyc", ".gitignore", "darkripples_pack.zip", "PackZip.py",
+IGNORE_LIST = [".idea", ".git", ".pyc", ".venv", ".gitignore",
+               "darkripples_pack.zip", "PackZip.py",
                "docs", "logs", "upload", "UnZipPack.sh",
-               "README.md", ]
+               "README.md", "desktop.ini"]
 
 
 def main():
