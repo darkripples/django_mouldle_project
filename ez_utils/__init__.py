@@ -10,8 +10,10 @@
 ------------      -------    --------    -----------
 2018/10/31 11:41   fls        1.0         create
 """
+version = "1.0.1"
 
 from .fls_log import log_func
+
 flog = log_func()
 
 from .attrdict import AttrDict as fdic
