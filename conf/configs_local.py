@@ -6,9 +6,6 @@ CONFIGS_NAME = __file__
 # ini配置文件名
 INI_NAME = 'conf.ini'
 
-# 文件上传路径，若为空，则用settings里的
-UPLOAD_PATH = ""
-
 # DB
 DB_HOST = '10.0.0.236'
 DB_PORT = 5432

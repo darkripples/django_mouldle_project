@@ -9,6 +9,7 @@
 @Modify Time      @Author    @Version    @Desciption
 ------------      -------    --------    -----------
 2018/10/31 11:41   fls        1.0         create
+2020/08/01 11:43   fls        1.1         新增函数get_current_week
 """
 
 import datetime
@@ -96,6 +97,28 @@ def reformat_date_str(rq1, fmt1, fmt2):
     \t\t@param: fmt2 目标格式
     """
     return datetime.datetime.strptime(rq1, fmt1).strftime(fmt2)
+
+
+def get_current_week(date=None, fmt=FMT_DATE):
+    """
+    返回日期所在周的日期字符串列表
+    :param date:
+    :param fmt:
+    :return:
+    """
+    if not date:
+        date = datetime.datetime.now()
+    monday = date
+    one_day = datetime.timedelta(days=1)
+    while monday.weekday() != 0:
+        monday -= one_day
+
+    # 返回所在周的字符串列表
+    ret = []
+    for i in range(7):
+        ret.append((monday + datetime.timedelta(days=i)).strftime(fmt))
+
+    return ret
 
 
 def help(num='①'):

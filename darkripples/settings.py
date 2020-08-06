@@ -17,12 +17,19 @@ import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # web root
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = 'static'
+UPLOAD_ROOT = 'upload'
+
 # now root
 BASEPATH = os.path.split(__file__)[0]
-STATICPATH = os.path.join(BASE_DIR, 'static')
+
+STATIC_DIR = os.path.join(BASE_DIR, STATIC_ROOT)
 CACHE_DIR = os.path.join(BASE_DIR, 'tmp')
 LOGS_DIR = os.path.join(BASE_DIR, 'logs')
-UPLOAD_DIR = os.path.join(BASE_DIR, 'upload')
+
+# 文件上传目录
+UPLOAD_DIR = os.path.join(BASE_DIR, STATIC_ROOT, UPLOAD_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -87,7 +94,7 @@ ROOT_URLCONF = 'darkripples.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(STATICPATH, 'tmpl')],
+        'DIRS': [os.path.join(STATIC_DIR, 'tmpl')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,7 +141,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 TIME_ZONE = 'Asia/Shanghai'
-LANGUAGE_CODE = 'zh_Hans'
+# LANGUAGE_CODE = 'zh_Hans'
 LANGUAGE_CODE = 'zh-hans'
 
 USE_I18N = True
@@ -145,13 +152,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".  
     # Always use forward slashes, even on Windows.  
     # Don't forget to use absolute paths, not relative paths.  
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '/static/'),
 )
 
 # 设置项是否开启URL访问地址后面不为/跳转至带有/的路径

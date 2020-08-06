@@ -23,7 +23,6 @@ from ez_utils.models import ResModel
 from ez_utils import fmt_date, FMT_DATE, get_ip
 from ez_utils import flog
 from app_dr.dr_utils import req_invalid_check
-from conf import UPLOAD_PATH
 
 
 @csrf_exempt
@@ -61,7 +60,7 @@ def upload_file(req):
     # 允许指定类型前缀，以区分不同业务
     path_pre = req.POST.get('pathPre', '')
     # 上传路径
-    up_path_pre = UPLOAD_PATH or settings.UPLOAD_DIR
+    up_path_pre = settings.UPLOAD_DIR
     # 按日期年月分组
     now_date = fmt_date(fmt=FMT_DATE)
     up_path = path.join(up_path_pre, path_pre, now_date)
@@ -78,6 +77,7 @@ def upload_file(req):
     ret.msg = '已上传'
     ret.code = ret.ResCode.succ
     # fileSize单位是字节.fileSize/1024单位即kb；fileSize/1024/1024单位即mb
-    ret.data = {"oldName": file_obj.name, "newName": path.join(path_pre, now_date, file_name),
+    ret.data = {"oldName": file_obj.name,
+                "newName": path.join(settings.STATIC_ROOT, settings.UPLOAD_ROOT, path_pre, now_date, file_name),
                 "fileType": file_type.split(".")[-1], "fileSize": file_obj.size}
     return JsonResponse(ret.to_dic())
