@@ -7,6 +7,8 @@ CONFIGS_NAME = __file__
 INI_NAME = 'conf.ini'
 # 允许访问的ip或域名
 ALLOWED_HOSTS = ['10.0.0.207']
+# 控制台是否print sql语句
+SHOW_SQL = False
 
 # DB
 DB_HOST = '10.0.0.236'

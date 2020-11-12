@@ -208,3 +208,18 @@ LOGGING = {
 
     },
 }
+# 控制台是否打印sql
+SHOW_SQL = False
+try:
+    from conf import SHOW_SQL
+except:
+    pass
+if SHOW_SQL:
+    # 开启打印sql的话，因为上面配置了DEBUG必须为True，才打印django的sql
+    DEBUG = True
+    # 增加django的sql日志处理
+    LOGGING['loggers']['django.db.backends'] = {
+        'handlers': ['console'],
+        'propagate': True,
+        'level': 'DEBUG',
+    }
