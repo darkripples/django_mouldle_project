@@ -10,15 +10,17 @@
 ------------      -------    --------    -----------
 2018/10/31 11:41   fls        1.0.0         create
 2020/08/01 11:43   fls        1.0.1         新增函数get_current_week
+2020/08/14 11:40   fls        1.1           规范下划线转驼峰func命名、新增驼峰转下划线func命名
+2020/08/29 14:20   fls        1.1.1         增加tts模块，export `save_img_base64`
 """
-version = "1.0.1"
+version = "1.1.1"
 
 from .fls_log import log_func
 
 flog = log_func()
 
 from .attrdict import AttrDict as fdic
-from .fmt_utils import fmt_null_obj as fnull, e_string as fstr, e_int, e_int_money
+from .fmt_utils import fmt_null_obj as fnull, e_string as fstr, e_int, e_int_money, hump2underline
 from .date_utils import (fmt_date as fmt_date, get_day_n as after_date, get_seconds_n as after_seconds,
                          get_interval_day as interval_day, reformat_date_str as reformat_date_str,
                          str2date as str2date, get_current_week)
@@ -28,7 +30,7 @@ from .dbpool import connection, sql_execute
 from .err_utils import err_check, params_verify, ParamsVerifyError
 from .http_utils import get_ip, match_url
 # from .position_utils import ip2jwd, is_internal_ip, ip2city
-from .file_utils import walk_dir, glob_dir
+from .file_utils import walk_dir, glob_dir, save_img_base64
 from .read_conf_utils import read_conf
 from .pwd_utils import PwdCtrl
 from .redis_utils import RedisCtrl

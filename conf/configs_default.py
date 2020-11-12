@@ -5,6 +5,8 @@ CONFIGS_NAME = __file__
 
 # ini配置文件名
 INI_NAME = 'conf.ini'
+# 允许访问的ip或域名
+ALLOWED_HOSTS = []
 
 # DB
 DB_HOST = '127.0.0.1'

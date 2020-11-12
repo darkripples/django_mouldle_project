@@ -169,6 +169,8 @@ CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
 sys.path.insert(0, os.path.join(BASEPATH))
 
 from conf import DATABASES
+from conf import ALLOWED_HOSTS as ah
+ALLOWED_HOSTS.extend(ah)
 
 # django日志配置.用manage方式启动的话，在DEBUG模式下才显示请求信息
 LOGGING = {

@@ -13,7 +13,7 @@
 
 from base64 import b64decode
 from glob import glob
-from os import path, walk, remove
+from os import path, walk, remove, makedirs
 
 
 def read_in_chunks(file_path: str, chunk_size=1024 * 1024):
@@ -59,6 +59,9 @@ def save_img_base64(file_path: str, img_64: str):
     :param img_64:
     :return:
     """
+    if not img_64: return
+    if not path.exists(path.dirname(file_path)):
+        makedirs(path.dirname(file_path))
     imagedata = b64decode(img_64)
     file = open(file_path, "wb")
     file.write(imagedata)

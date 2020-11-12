@@ -16,8 +16,6 @@ from .configs_default import *
 # 【当前生效的配置，开发者需按环境修改】
 from .configs_local import *
 
-# from .configs_prod import *
-
 # DB for Django，放在最后
 DATABASES = {
     'default': {

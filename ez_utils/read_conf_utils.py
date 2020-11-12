@@ -28,7 +28,7 @@ class MyConfigParser(configparser.ConfigParser):
         return optionstr
 
 
-def read_conf(file_path: str):
+def read_conf(file_path: str, default_coding='utf8'):
     """
     读取配置文件
     :param file_path:
@@ -36,7 +36,7 @@ def read_conf(file_path: str):
     """
     # cf = configparser.ConfigParser()
     cf = MyConfigParser()
-    cf.read(file_path, encoding="utf8")
+    cf.read(file_path, encoding=default_coding)
 
     ret = fdic()
     sections = cf.sections()
